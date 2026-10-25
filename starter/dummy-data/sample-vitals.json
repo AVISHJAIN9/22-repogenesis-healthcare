@@ -1,0 +1,17 @@
+{
+  "patientId": "P001",
+  "vitals": [
+    {
+      "timestamp": "2024-01-10T08:00:00Z",
+      "heartRate": 76,
+      "bloodPressure": "120/80",
+      "temperature": 98.4
+    },
+    {
+      "timestamp": "2024-01-10T12:00:00Z",
+      "heartRate": 81,
+      "bloodPressure": "118/79",
+      "temperature": 98.6
+    }
+  ]
+}

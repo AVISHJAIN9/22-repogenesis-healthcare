@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Intake</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+    .container { max-width: 1200px; margin: 40px auto; padding: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; }
+    .panel { background: white; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); padding: 20px; }
+    h2 { margin-top: 0; }
+    label { display: block; font-weight: 600; margin: 12px 0 6px; }
+    input, select, textarea, button { width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; border: 1px solid #d1d5db; font-size: 14px; }
+    textarea { min-height: 100px; resize: vertical; }
+    button { background: #0f766e; color: white; border: none; cursor: pointer; font-weight: 700; margin-top: 12px; }
+    button.secondary { background: #475569; }
+    .row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { padding: 10px 12px; border-bottom: 1px solid #e5e7eb; }
+    .status { color: #0f766e; font-weight: 700; }
+    .error { color: #b91c1c; font-weight: 700; margin-top: 8px; }
+    .success { color: #166534; font-weight: 700; margin-top: 8px; }
+    .muted { color: #64748b; font-size: 12px; }
+    .alert-box { background: #fff1f2; border: 1px solid #fecdd3; color: #9f1239; border-radius: 10px; padding: 12px; margin-bottom: 12px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RepoGenesis Healthcare Intake</h1>
+    <p class="muted">Batch 2: Symptoms, Treatment History, Medication History, Allergies, Comorbidities</p>
+    <div id="authStatus" class="muted">Connecting...</div>
+
+    <div class="grid">
+      <div class="panel">
+        <h2>Patient registration</h2>
+        <form id="patientForm">
+          <div class="row">
+            <div>
+              <label>First name</label>
+              <input name="firstName" required>
+            </div>
+            <div>
+              <label>Last name</label>
+              <input name="lastName" required>
+            </div>
+          </div>
+          <label>Email</label>
+          <input name="email" type="email">
+          <label>Phone</label>
+          <input name="phone" required>
+          <label>Date of birth</label>
+          <input name="dateOfBirth" type="date">
+          <label>Gender</label>
+          <select name="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <label>Address</label>
+          <textarea name="address"></textarea>
+          <label>Emergency contact</label>
+          <input name="emergencyContactName">
+          <label>Emergency phone</label>
+          <input name="emergencyContactPhone">
+          <button type="submit">Create patient</button>
+          <div id="patientMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Case creation</h2>
+        <form id="caseForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="casePatientId" required>
+          <label>Case type</label>
+          <input name="caseType" value="Regenerative Medicine">
+          <label>Chief complaint</label>
+          <textarea name="chiefComplaint" required></textarea>
+          <label>Assigned clinician</label>
+          <input name="assignedClinician">
+          <label>Status</label>
+          <select name="status">
+            <option value="new">new</option>
+            <option value="intake">intake</option>
+            <option value="under_review">under_review</option>
+            <option value="accepted">accepted</option>
+          </select>
+          <button type="submit">Create case</button>
+          <div id="caseMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Medical history</h2>
+        <form id="historyForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="historyPatientId" required>
+          <label>Case ID (optional)</label>
+          <input name="caseId" id="historyCaseId">
+          <label>Past medical history</label>
+          <textarea name="pastMedicalHistory" placeholder="Hypertension, Diabetes"></textarea>
+          <label>Surgical history</label>
+          <textarea name="surgicalHistory" placeholder="Appendectomy"></textarea>
+          <label>Allergies</label>
+          <textarea name="allergies" placeholder="Penicillin"></textarea>
+          <label>Current medications</label>
+          <textarea name="currentMedications" placeholder="Ibuprofen"></textarea>
+          <label>Comorbidities</label>
+          <textarea name="comorbidities" placeholder="Obesity"></textarea>
+          <button type="submit">Save history</button>
+          <div id="historyMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Diagnosis</h2>
+        <form id="diagnosisForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="diagnosisPatientId" required>
+          <label>Case ID</label>
+          <input name="caseId" id="diagnosisCaseId" required>
+          <label>Diagnosis name</label>
+          <input name="diagnosisName" required>
+          <label>Diagnosis code</label>
+          <input name="diagnosisCode">
+          <label>Severity</label>
+          <select name="severity">
+            <option value="moderate">moderate</option>
+            <option value="mild">mild</option>
+            <option value="severe">severe</option>
+            <option value="critical">critical</option>
+          </select>
+          <label>Notes</label>
+          <textarea name="notes"></textarea>
+          <button type="submit">Save diagnosis</button>
+          <div id="diagnosisMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Symptoms</h2>
+        <form id="symptomForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="symptomPatientId" required>
+          <label>Case ID</label>
+          <input name="caseId" id="symptomCaseId">
+          <label>Symptom name</label>
+          <input name="name" required>
+          <label>Onset date</label>
+          <input name="onsetDate" type="date">
+          <label>Start date</label>
+          <input name="startDate" type="date">
+          <label>End date</label>
+          <input name="endDate" type="date">
+          <label>Severity</label>
+          <select name="severity">
+            <option value="mild">mild</option>
+            <option value="moderate" selected>moderate</option>
+            <option value="severe">severe</option>
+            <option value="critical">critical</option>
+          </select>
+          <label>Status</label>
+          <select name="status">
+            <option value="active">active</option>
+            <option value="improving">improving</option>
+            <option value="resolved">resolved</option>
+            <option value="chronic">chronic</option>
+          </select>
+          <label>Notes</label>
+          <textarea name="notes"></textarea>
+          <button type="submit">Save symptom</button>
+          <div id="symptomMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Treatment history</h2>
+        <form id="treatmentForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="treatmentPatientId" required>
+          <label>Case ID</label>
+          <input name="caseId" id="treatmentCaseId">
+          <label>Treatment type</label>
+          <input name="treatmentType" required>
+          <label>Prior treatment</label>
+          <input name="priorTreatment">
+          <label>Outcome</label>
+          <input name="outcome">
+          <label>Start date</label>
+          <input name="startDate" type="date">
+          <label>End date</label>
+          <input name="endDate" type="date">
+          <label>Status</label>
+          <select name="status">
+            <option value="planned">planned</option>
+            <option value="ongoing">ongoing</option>
+            <option value="completed" selected>completed</option>
+            <option value="discontinued">discontinued</option>
+          </select>
+          <button type="submit">Save treatment</button>
+          <div id="treatmentMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Medication history</h2>
+        <form id="medicationForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="medicationPatientId" required>
+          <label>Case ID</label>
+          <input name="caseId" id="medicationCaseId">
+          <label>Drug name</label>
+          <input name="drugName" required>
+          <label>Dose</label>
+          <input name="dose">
+          <label>Frequency</label>
+          <input name="frequency">
+          <label>Route</label>
+          <select name="route">
+            <option value="oral">oral</option>
+            <option value="topical">topical</option>
+            <option value="intravenous">intravenous</option>
+            <option value="intramuscular">intramuscular</option>
+            <option value="subcutaneous">subcutaneous</option>
+            <option value="inhaled">inhaled</option>
+          </select>
+          <label>Status</label>
+          <select name="status">
+            <option value="active" selected>active</option>
+            <option value="paused">paused</option>
+            <option value="completed">completed</option>
+            <option value="discontinued">discontinued</option>
+          </select>
+          <label>Start date</label>
+          <input name="startDate" type="date">
+          <label>End date</label>
+          <input name="endDate" type="date">
+          <button type="submit">Save medication</button>
+          <div id="medicationMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Allergies</h2>
+        <div class="alert-box">Allergy alert: this information is displayed prominently to support safe treatment planning.</div>
+        <form id="allergyForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="allergyPatientId" required>
+          <label>Case ID</label>
+          <input name="caseId" id="allergyCaseId">
+          <label>Allergen</label>
+          <input name="allergen" required>
+          <label>Reaction</label>
+          <input name="reaction" required>
+          <label>Severity</label>
+          <select name="severity">
+            <option value="mild">mild</option>
+            <option value="moderate" selected>moderate</option>
+            <option value="severe">severe</option>
+            <option value="critical">critical</option>
+          </select>
+          <label>Status</label>
+          <select name="status">
+            <option value="active" selected>active</option>
+            <option value="inactive">inactive</option>
+            <option value="resolved">resolved</option>
+          </select>
+          <label>Onset date</label>
+          <input name="onsetDate" type="date">
+          <button type="submit">Save allergy</button>
+          <div id="allergyMessage"></div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Comorbidities</h2>
+        <form id="comorbidityForm">
+          <label>Patient ID</label>
+          <input name="patientId" id="comorbidityPatientId" required>
+          <label>Case ID</label>
+          <input name="caseId" id="comorbidityCaseId">
+          <label>Condition name</label>
+          <input name="conditionName" required>
+          <label>Status</label>
+          <select name="status">
+            <option value="active" selected>active</option>
+            <option value="controlled">controlled</option>
+            <option value="resolved">resolved</option>
+            <option value="monitoring">monitoring</option>
+          </select>
+          <label>Onset date</label>
+          <input name="onsetDate" type="date">
+          <button type="submit">Save comorbidity</button>
+          <div id="comorbidityMessage"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:24px;">
+      <h2>Patient list</h2>
+      <ul id="patientList" class="list"></ul>
+    </div>
+  </div>
+
+  <script src="./patient-intake.js"></script>
+</body>
+</html>

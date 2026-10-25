@@ -1,0 +1,151 @@
+id,feature,area,priority,FE,BE,DB,AI,dependencies
+F001,Patient registration,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F002,Case creation,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F003,Patient demographics,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F004,Medical history capture,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F005,Diagnosis capture,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F006,Symptoms capture,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F007,Treatment history,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F008,Medication history,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F009,Allergy capture,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F010,Comorbidity capture,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F011,Clinical notes,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F012,Clinical data ingestion,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F013,Lab-result ingestion,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F014,Vital-sign ingestion,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F015,Imaging upload,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F016,DICOM support,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F017,Image metadata,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F018,Image preprocessing,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F019,Image quality checks,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F020,Segmentation pipeline,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F021,Anatomical landmark detection,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F022,Lesion/defect detection,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F023,Regenerative case assessment,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F024,Tissue/organ target definition,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F025,Regeneration objective,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F026,Candidate therapy selection,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F027,Treatment protocol,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F028,Cell-source selection,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F029,Biomaterial selection,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F030,Scaffold selection,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F031,Growth-factor selection,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F032,Dose/protocol planning,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F033,Treatment timeline,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F034,Clinical risk prediction,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F035,Outcome prediction,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F036,Patient stratification,AI/ML & Clinical Intelligence,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F037,Therapy recommendation engine,AI/ML & Clinical Intelligence,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F038,Treatment-response prediction,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F039,Regeneration potential scoring,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F040,Imaging classification,AI/ML & Clinical Intelligence,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F041,Image segmentation model,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F042,Biomarker prediction,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F043,Feature engineering,AI/ML & Clinical Intelligence,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F044,Model training pipeline,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F045,Clinical knowledge base,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F046,Research-paper ingestion,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F047,Guideline ingestion,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F048,Protocol knowledge base,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F049,Evidence retrieval,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F050,Semantic search,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F051,RAG pipeline,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F052,Citation generation,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F053,Evidence ranking,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F054,Study comparison,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F055,Clinical-trial matching,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F056,Treatment-plan builder,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F057,Plan comparison,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F058,Protocol recommendations,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F059,Contraindication checks,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F060,Eligibility checks,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F061,Risk-benefit display,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F062,Expected-outcome display,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F063,Treatment simulation,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F064,Alternative-plan generation,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F065,Clinician override,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F066,Decision rationale,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F067,Post-treatment monitoring,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F068,Follow-up scheduling,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F069,Outcome questionnaires,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F070,Patient-reported outcomes,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F071,Clinical outcome capture,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F072,Imaging follow-up,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F073,Biomarker follow-up,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F074,Adverse-event tracking,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F075,Complication detection,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F076,Progress scoring,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F077,Milestone alerts,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state
+F078,Patient dashboard,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F079,Clinician dashboard,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F080,Case overview,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F081,Timeline UI,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F082,Imaging viewer,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F083,Lab-results viewer,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F084,Treatment-plan UI,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F085,AI-insight panel,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F086,Evidence/citation panel,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F087,Alerts center,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F088,Appointment/follow-up UI,Patient & Clinician Frontend,P1,1,1,0,0,Patient + clinical data + treatment/case state
+F089,Patient API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F090,Case API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F091,Clinical-data API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F092,Imaging API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F093,Treatment API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F094,AI-inference API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F095,Knowledge API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F096,Research API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F097,Monitoring API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F098,Notification API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F099,User API,Backend APIs & Services,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F100,Patient database,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F101,Case database,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F102,Clinical-record store,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F103,Imaging metadata store,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F104,Document store,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F105,Treatment database,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F106,Outcome database,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F107,Research metadata store,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F108,Vector database,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F109,Knowledge graph store,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F110,Audit database,Database & Health Data Platform,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F111,Authentication,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F112,RBAC,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F113,Clinician role controls,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F114,Patient access controls,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F115,Tenant isolation,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F116,Consent enforcement,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F117,Encryption in transit,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F118,Encryption at rest,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F119,PII protection,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F120,PHI protection,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F121,Sensitive-data redaction,"Security, Privacy & Compliance",P0,1,1,1,0,Patient + clinical data + treatment/case state
+F122,Clinical analytics,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F123,Treatment analytics,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F124,Outcome analytics,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F125,Model analytics,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F126,Usage analytics,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F127,System monitoring,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F128,API latency metrics,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F129,AI inference latency,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F130,Data pipeline monitoring,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F131,Error tracking,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F132,Structured logs,"Analytics, Operations & Reliability",P1,0,1,0,0,Patient + clinical data + treatment/case state
+F133,Multimodal clinical AI,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F134,Medical image foundation model integration,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F135,Personalized treatment optimization,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F136,Patient digital twin concept,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F137,Outcome forecasting,Advanced AI & Future Features,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F138,Clinical trial optimization,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F139,Automated case summarization,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F140,Automated literature surveillance,Advanced AI & Future Features,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F141,AI research assistant,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F142,Clinical knowledge graph reasoning,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F143,Uncertainty-aware predictions,Advanced AI & Future Features,P1,1,1,0,1,Patient + clinical data + treatment/case state
+F144,Case status,Patient & Case Intake,P0,0,1,0,0,Patient + clinical data + treatment/case state
+F145,Image annotation,Clinical Data & Imaging,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F146,Milestone tracking,Regenerative Medicine Workflow,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F147,Model evaluation,AI/ML & Clinical Intelligence,P0,1,1,0,1,Patient + clinical data + treatment/case state
+F148,Literature summarization,Knowledge & Research,P1,0,1,0,0,Patient + clinical data + treatment/case state
+F149,Safety warnings,Treatment Planning & Decision Support,P0,0,1,1,0,Patient + clinical data + treatment/case state
+F150,Treatment-response trends,Monitoring & Follow-up,P1,0,1,1,0,Patient + clinical data + treatment/case state

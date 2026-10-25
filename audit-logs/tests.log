@@ -1,0 +1,66 @@
+
+> home12345@1.0.0 test
+> node --test --test-reporter=spec
+
+◇ injected env (0) from .env
+✔ POST /api/plans creates a valid treatment plan and list endpoint paginates it (4716.529791ms)
+✔ POST /api/plans validates missing or invalid input (5.919959ms)
+✔ POST /api/plans rejects unauthorized and cross-tenant access (456.538875ms)
+✔ POST /api/plans/compare returns a diff between two plan versions (58.552625ms)
+◇ injected env (0) from .env
+✔ POST /api/plans/:id/decision-support returns eligibility, risk/benefit and rationale (5400.911833ms)
+✔ POST /api/decision-support/override captures a clinician override and reason (11.495584ms)
+◇ injected env (0) from .env
+✔ POST /api/monitoring/plans and follow-ups create monitoring records (5220.48525ms)
+✔ POST /api/monitoring/safety-warnings and GET /api/monitoring/patient/:patientId/summary (51.496708ms)
+◇ injected env (0) from .env
+✔ POST /api/outcomes/pros, clinical, adverse-events and summary endpoint (4736.94825ms)
+◇ injected env (0) from .env
+(node:39447) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ POST /api/alerts/progress-score and summary/trend endpoints return rule-based alerting data (4471.59675ms)
+◇ injected env (0) from .env
+✔ GET /api/dashboard/patient/:patientId/summary and /api/cases/:id/overview return aggregated dashboard data (5515.312834ms)
+◇ injected env (0) from .env
+✔ POST /api/knowledge/entries, search, and summary endpoints return indexed knowledge content (4685.750416ms)
+◇ injected env (0) from .env
+✔ POST /api/history/symptoms creates a symptom record (2987.34475ms)
+✔ POST /api/history/treatments creates treatment history (17.099958ms)
+✔ POST /api/history/medications creates medication history (10.752292ms)
+✔ POST /api/history/allergies and /api/history/comorbidities creates entries (15.748458ms)
+✔ GET /api/history/patient/:patientId/summary returns all datasets (14.693417ms)
+✔ POST /api/history/symptoms validates enum values and date consistency (5.656083ms)
+✔ Missing auth fails on patient summary endpoint (2.247541ms)
+◇ injected env (0) from .env
+✔ POST /api/analytics/protocols and evidence endpoints plus summary (3400.091583ms)
+◇ injected env (0) from .env
+✔ POST observability events and GET summary returns structured operational metrics (2833.689417ms)
+◇ injected env (0) from .env
+✔ GET /api/health/db reports connected database state (2865.662541ms)
+✔ POST /api/documents creates a document and list endpoint returns paginated results (64.859125ms)
+✔ POST /api/documents rejects invalid size and missing auth (10.249292ms)
+✔ POST /api/documents/imaging creates the imaging metadata store with rule-based quality reporting (112.827292ms)
+✔ Cross-tenant view is isolated (422.84175ms)
+◇ injected env (0) from .env
+✔ POST /api/patients creates a patient (2971.297042ms)
+✔ GET /api/patients returns paginated list (16.11325ms)
+✔ POST /api/patients rejects missing phone (7.696208ms)
+✔ POST /api/cases creates a case for a patient (8.027875ms)
+(node:39503) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ PATCH /api/cases/:id/status updates case status (10.879292ms)
+(node:39503) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+✔ POST /api/clinical/medical-history stores history (10.275667ms)
+✔ POST /api/clinical/diagnoses creates diagnosis (10.783875ms)
+✔ Unauthorized access to patient list fails (6.299334ms)
+✔ password policy accepts strong passwords and rejects weak ones (0.751041ms)
+✔ patient accounts can read their own record and case access (0.246375ms)
+✔ clinician assigned access is respected (0.1915ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13609.1475

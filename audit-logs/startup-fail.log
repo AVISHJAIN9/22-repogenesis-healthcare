@@ -1,0 +1,109 @@
+◇ injected env (0) from .env
+/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/sdam/topology.js:327
+                const timeoutError = new error_1.MongoServerSelectionError(`Server selection timed out after ${timeout?.duration} ms`, this.description);
+                                     ^
+
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/sdam/topology.js:327:38)
+    at async Topology._connect (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/sdam/topology.js:200:28)
+    at async Topology.connect (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/sdam/topology.js:152:13)
+    at async topologyConnect (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/mongo_client.js:264:17)
+    at async MongoClient._connect (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/mongo_client.js:277:13)
+    at async MongoClient.connect (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/mongo_client.js:202:13)
+    at async MongoClient.connect (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/mongo_client.js:446:16) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 3314778314,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+            at Socket.<anonymous> (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/cmap/connect.js:286:44)
+            at Object.onceWrapper (node:events:634:26)
+            at Socket.emit (node:events:519:28)
+            at emitErrorNT (node:internal/streams/destroy:170:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+            at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+          errorLabelSet: Set(1) { 'ResetPool' },
+          beforeHandshake: false,
+          [cause]: AggregateError [ECONNREFUSED]: 
+              at internalConnectMultiple (node:net:1135:18)
+              at afterConnectMultiple (node:net:1716:7) {
+            code: 'ECONNREFUSED',
+            [errors]: [Array]
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  [cause]: MongoNetworkError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+      at Socket.<anonymous> (/Users/avishjain/avishjain9-repos/24-repogenesis-healthcare/VITALS/node_modules/mongodb/lib/cmap/connect.js:286:44)
+      at Object.onceWrapper (node:events:634:26)
+      at Socket.emit (node:events:519:28)
+      at emitErrorNT (node:internal/streams/destroy:170:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+    errorLabelSet: Set(1) { 'ResetPool' },
+    beforeHandshake: false,
+    [cause]: AggregateError [ECONNREFUSED]: 
+        at internalConnectMultiple (node:net:1135:18)
+        at afterConnectMultiple (node:net:1716:7) {
+      code: 'ECONNREFUSED',
+      [errors]: [
+        Error: connect ECONNREFUSED ::1:27017
+            at createConnectionError (node:net:1679:14)
+            at afterConnectMultiple (node:net:1709:16) {
+          errno: -61,
+          code: 'ECONNREFUSED',
+          syscall: 'connect',
+          address: '::1',
+          port: 27017
+        },
+        Error: connect ECONNREFUSED 127.0.0.1:27017
+            at createConnectionError (node:net:1679:14)
+            at afterConnectMultiple (node:net:1709:16) {
+          errno: -61,
+          code: 'ECONNREFUSED',
+          syscall: 'connect',
+          address: '127.0.0.1',
+          port: 27017
+        }
+      ]
+    }
+  }
+}
+
+Node.js v22.23.2
