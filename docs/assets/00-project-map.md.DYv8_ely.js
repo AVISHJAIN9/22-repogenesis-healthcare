@@ -1,0 +1,31 @@
+import{_ as s,o as e,c as n,a2 as t}from"./chunks/framework.XVqh0tHf.js";const u=JSON.parse('{"title":"Project Map: 24-repogenesis-healthcare","description":"","frontmatter":{},"headers":[],"relativePath":"00-project-map.md","filePath":"00-project-map.md"}'),p={name:"00-project-map.md"};function i(o,a,c,l,r,d){return e(),n("div",null,[...a[0]||(a[0]=[t(`<h1 id="project-map-24-repogenesis-healthcare" tabindex="-1">Project Map: 24-repogenesis-healthcare <a class="header-anchor" href="#project-map-24-repogenesis-healthcare" aria-label="Permalink to &quot;Project Map: 24-repogenesis-healthcare&quot;">​</a></h1><h2 id="folder-structure" tabindex="-1">Folder Structure <a class="header-anchor" href="#folder-structure" aria-label="Permalink to &quot;Folder Structure&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>24-repogenesis-healthcare/</span></span>
+<span class="line"><span>├── VITALS/                             # Full-Stack Hospital Application</span></span>
+<span class="line"><span>│   ├── app.js                          # Express 5 application entry point &amp; server setup</span></span>
+<span class="line"><span>│   ├── package.json                    # Node.js dependencies &amp; scripts</span></span>
+<span class="line"><span>│   ├── seed.js                         # Database bootstrapping &amp; default tenant seeding</span></span>
+<span class="line"><span>│   ├── models/                         # 49 Mongoose schemas (User, Document, Imaging, Plan)</span></span>
+<span class="line"><span>│   ├── routes/                         # 14 Express REST API route controllers</span></span>
+<span class="line"><span>│   │   ├── patientRoutes.js            # Patient intake, demographic &amp; history endpoints</span></span>
+<span class="line"><span>│   │   ├── caseRoutes.js               # Clinical case management &amp; triage</span></span>
+<span class="line"><span>│   │   ├── clinicalRoutes.js           # Encounter notes, vitals &amp; diagnosis logs</span></span>
+<span class="line"><span>│   │   ├── decisionSupportRoutes.js    # CDSS contraindication &amp; recommendation engine</span></span>
+<span class="line"><span>│   │   ├── documentRoutes.js           # Medical report &amp; DICOM metadata management</span></span>
+<span class="line"><span>│   │   ├── planRoutes.js               # Longitudinal care &amp; treatment plan builder</span></span>
+<span class="line"><span>│   │   ├── monitoringRoutes.js         # Vital trend capture &amp; automated threshold checks</span></span>
+<span class="line"><span>│   │   ├── alertsRoutes.js             # High-priority clinical alert broadcast</span></span>
+<span class="line"><span>│   │   ├── dashboardRoutes.js          # Ward occupancy &amp; executive health metrics</span></span>
+<span class="line"><span>│   │   ├── analyticsRoutes.js          # Departmental throughput &amp; length-of-stay stats</span></span>
+<span class="line"><span>│   │   └── observabilityRoutes.js      # System health probes, uptime &amp; audit logs</span></span>
+<span class="line"><span>│   ├── services/                       # Business logic &amp; security utilities</span></span>
+<span class="line"><span>│   │   └── securityService.js          # Password hashing, JWT signing, lockout management</span></span>
+<span class="line"><span>│   ├── middleware/                     # Middleware chain (auth, usage tracking, error handler)</span></span>
+<span class="line"><span>│   ├── tests/                          # 13 native node --test suites with Supertest</span></span>
+<span class="line"><span>│   ├── hospitalbed.html                # Visual cinema-style bed reservation interface</span></span>
+<span class="line"><span>│   ├── insurance.html                  # Surgical cost &amp; insurance deductible calculator</span></span>
+<span class="line"><span>│   ├── SecureMeds.html.html            # E-Pharmacy &amp; digital prescription tracking portal</span></span>
+<span class="line"><span>│   ├── videoconsultation.html          # Jitsi WebRTC telehealth consultation interface</span></span>
+<span class="line"><span>│   ├── xyzgame.html                    # Gamified stroke motor rehab &amp; panic recovery</span></span>
+<span class="line"><span>│   └── arogyam.html                    # Aarogyam diagnostic encyclopedia &amp; care cards</span></span>
+<span class="line"><span>├── audit/                              # Project compliance audit reports</span></span>
+<span class="line"><span>├── audit-logs/                         # System execution logs</span></span>
+<span class="line"><span>└── docs/                               # VitePress documentation suite</span></span></code></pre></div><h2 id="tech-stack-dependencies" tabindex="-1">Tech Stack &amp; Dependencies <a class="header-anchor" href="#tech-stack-dependencies" aria-label="Permalink to &quot;Tech Stack &amp; Dependencies&quot;">​</a></h2><ul><li><code>express@^5.1.0</code>: Modern Express web framework with improved async error handling.</li><li><code>mongoose@^9.11.3</code>: Next-generation MongoDB object data modeling.</li><li><code>jsonwebtoken@^9.0.3</code>: Stateless access and refresh token signing and verification.</li><li><code>bcrypt@^6.0.0</code>: Secure salted cryptographic password hashing.</li><li><code>connect-mongo@^5.1.0</code>: Production-grade MongoDB-backed session store.</li><li><code>express-validator@^7.3.2</code>: Declarative request sanitization and schema validation.</li><li><code>supertest@^7.3.1</code>: HTTP assertion library for endpoint integration testing.</li><li><code>mongodb-memory-server@^11.3.0</code>: Ephemeral in-memory MongoDB instance for hermetic unit testing.</li></ul>`,5)])])}const h=s(p,[["render",i]]);export{u as __pageData,h as default};
