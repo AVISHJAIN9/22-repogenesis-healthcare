@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Builder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #18212f;
+        margin: 0;
+        padding: 32px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+        padding: 28px;
+      }
+      h1 { margin-top: 0; }
+      .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 20px;
+      }
+      .panel {
+        background: #f8fafc;
+        border: 1px solid #dfe8f1;
+        border-radius: 12px;
+        padding: 18px;
+      }
+      label { display: block; font-weight: 600; margin-bottom: 8px; }
+      input, select, textarea, button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #c8d5e5;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .timeline-item, .recommendation-item, .plan-card {
+        background: white;
+        border: 1px solid #dbe5f0;
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 10px;
+      }
+      .inline-alert {
+        background: #fff7ed;
+        border-left: 4px solid #f59e0b;
+        padding: 10px 12px;
+        margin-top: 12px;
+        color: #9a5c00;
+      }
+      .hard-alert {
+        background: #fef2f2;
+        border-left: 4px solid #ef4444;
+        color: #991b1b;
+      }
+      .hide { display: none; }
+      .row { display: flex; gap: 12px; }
+      .row > * { flex: 1; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Treatment Plan Builder</h1>
+      <div class="grid">
+        <div class="panel">
+          <form id="planForm">
+            <div class="row">
+              <div>
+                <label>Target</label>
+                <input name="target" value="Joint regeneration" />
+              </div>
+              <div>
+                <label>Therapy</label>
+                <input name="therapy" value="PRP + MSC" />
+              </div>
+            </div>
+            <label>Objective</label>
+            <input name="objective" value="Reduce pain and restore mobility" />
+            <label>Plan status</label>
+            <select name="status">
+              <option value="draft">Draft</option>
+              <option value="under_review">Under review</option>
+              <option value="approved">Approved</option>
+            </select>
+            <label>Patient ID</label>
+            <input name="patientId" placeholder="mongo patient id" />
+            <label>Case ID</label>
+            <input name="caseId" placeholder="mongo case id" />
+            <label>Notes</label>
+            <textarea name="notes" rows="3">Initial regenerative plan</textarea>
+            <button type="submit">Create plan</button>
+          </form>
+          <div id="planResult" class="inline-alert hide"></div>
+        </div>
+        <div class="panel">
+          <h3>Protocol recommendations</h3>
+          <button id="recommendBtn">Load recommendations</button>
+          <div id="recommendations"></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h3>Timeline</h3>
+        <div id="timeline"></div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h3>Plan comparison</h3>
+        <div class="row">
+          <div>
+            <label>Plan A ID</label>
+            <input id="planAId" />
+          </div>
+          <div>
+            <label>Plan B ID</label>
+            <input id="planBId" />
+          </div>
+        </div>
+        <button id="compareBtn">Compare</button>
+        <div id="compareResult"></div>
+      </div>
+    </div>
+
+    <script src="./treatment-plan.js"></script>
+  </body>
+</html>
