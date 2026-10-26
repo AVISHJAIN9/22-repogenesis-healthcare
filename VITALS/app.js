@@ -57,7 +57,7 @@ const Appointment = mongoose.model('Appointment', appointmentSchema);
 async function connectDatabase() {
   try {
     await mongoose.connect(getDbUrl());
-    console.log('Connected to MongoDB:', getDbUrl());
+    console.log('Connected to MongoDB successfully');
   } catch (error) {
     console.error('MongoDB connection error:', error);
     process.exit(1);
@@ -168,8 +168,23 @@ async function ensureSeedData() {
   }
 }
 
+app.use((req, res, next) => {
+  const origin = req.headers.origin || '*';
+  res.setHeader('Access-Control-Allow-Origin', origin);
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+app.get('/health', (req, res) => res.json({ status: 'ok', service: 'RepoGenesis Healthcare API' }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+
 const sessionStore = process.env.NODE_ENV === 'test' ? undefined : MongoStore.create({ mongoUrl: getDbUrl() });
 
 app.use(session({
@@ -476,8 +491,8 @@ async function startServer() {
   const port = getPort();
 
   if (!app.locals.server) {
-    app.locals.server = app.listen(port, () => {
-      console.log(`Server running at http://localhost:${port}`);
+    app.locals.server = app.listen(port, '0.0.0.0', () => {
+      console.log(`Server running on port ${port}`);
     });
   }
 
